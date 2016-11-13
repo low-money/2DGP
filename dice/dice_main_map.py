@@ -1,6 +1,7 @@
 from pico2d import *
 
 import All_Class
+import Character_Select_Class
 import Character_Class
 
 
@@ -25,9 +26,9 @@ dice_R = All_Class.Dice_R()
 dice_a = All_Class.Dice_a()
 dice_back = All_Class.Dice_Back1()
 dice_back2 = All_Class.Dice_Back2()
-select_char1 = All_Class.Select_char1()
-select_char2 = All_Class.Select_char2()
-select_char3 = All_Class.Select_char3()
+select_char1 = Character_Select_Class.Select_char1()
+select_char2 = Character_Select_Class.Select_char2()
+select_char3 = Character_Select_Class.Select_char3()
 
 fighter = Character_Class.Fighter()
 lin = Character_Class.Lin()
