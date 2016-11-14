@@ -1,7 +1,7 @@
 import game_framework
 from pico2d import *
 import main_map
-
+import json
 name = "Select_char"
 image = None
 
@@ -40,13 +40,10 @@ def exit():
 def update():
    if count ==2:
        dice.update()
-   if count ==3:
-       Dice_a.frame = dice.frame
-
-
-
 def draw():
     global select1, select2, select3 ,dice
+
+
     clear_canvas()
     if count ==1 :
         select1.draw()
@@ -63,7 +60,7 @@ def draw():
 
 
 def handle_events():
-    global count
+    global count, dice ,select
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -73,6 +70,10 @@ def handle_events():
                 game_framework.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
                 if count ==3:
+                    f = open('fiel.txt', 'w')
+                    select = {'character': dice.frame}
+                    json.dump(select, f)
+                    f.close()
                     game_framework.change_state(main_map)
                 else:
                     count +=1
