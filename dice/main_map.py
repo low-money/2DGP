@@ -1,6 +1,7 @@
 import game_framework
 
 import json
+
 from pico2d import *
 
 from All_Class import Map_board ,Dice_L , Dice_R ,Dice_Back1, Dice_Back2
@@ -8,6 +9,8 @@ from All_Class import Map_board ,Dice_L , Dice_R ,Dice_Back1, Dice_Back2
 from Character_Select_Class import Dice_a
 
 from Character_Class import Fighter ,Lin , Smasu
+
+from Item_Box_Class import Box1 ,Box2,Box3
 
 from Monster_Class import Monkey1 , Monkey2, Monkey3 ,Boar1, Boar2, Boar3
 
@@ -25,12 +28,18 @@ boar1 = None
 boar2 = None
 boar3 = None
 monster = None
+box1 = None
+box2 = None
+box3 = None
+item = None
 count =0
 move_count = 0
+turn = 0
 i=0
-j=0
+mnum =0
+inum = 0
 def create_world():
-    global map, player, dice_c, dice_l, dice_r,  dice_back, dice_back2, monkey1,monkey2,monkey3,boar1,boar2,boar3 , monster
+    global map, player, dice_c, dice_l, dice_r,  dice_back, dice_back2, monkey1,monkey2,monkey3,boar1,boar2,boar3 , monster , box1, box2, box3, item
     dice_l = Dice_L()
     dice_r = Dice_R()
     dice_c = Dice_a()
@@ -43,6 +52,10 @@ def create_world():
     boar2 = Boar2()
     boar3 = Boar3()
     monster  = [monkey1 , monkey2, monkey3,boar1,boar2,boar3]
+    box1 = Box1()
+    box2 = Box2()
+    box3 = Box3()
+    item= [box1,box2,box3]
     f = open('select_char.txt', 'r')
     select = json.load(f)
     f.close()
@@ -87,10 +100,10 @@ def update():
                 i += 1
                 map.draw()
                 player.draw()
-                j = 0
-                while j < len(monster):
-                    monster[j].draw()
-                    j += 1
+                mnum = 0
+                while mnum < len(monster):
+                    monster[mnum].draw()
+                    mnum += 1
                 update_canvas()
                 delay(0.2)
             move_count =0
@@ -102,14 +115,18 @@ def update():
 
 
 def draw():
-    global player , mpa, dice_l, dice_r , dice_back, dice_back2, monster ,j
+    global player , mpa, dice_l, dice_r , dice_back, dice_back2, monster ,mnum,inum , item
     clear_canvas()
     map.draw()
     player.draw()
-    j=0
-    while j < len(monster):
-        monster[j].draw()
-        j+=1
+    mnum=0
+    inum =0
+    while mnum < len(monster):
+        monster[mnum].draw()
+        mnum+=1
+    while inum < len(item):
+        item[inum].draw()
+        inum+=1
 
     if count %2 ==0:
         dice_back.draw()

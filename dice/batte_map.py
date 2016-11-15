@@ -1,5 +1,6 @@
 import game_framework
 import main_map
+import json
 from pico2d import *
 
 mpa =None

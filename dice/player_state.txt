@@ -1,0 +1,6 @@
+{"Class": "Fighter","hp": 50
+
+
+
+}
+
