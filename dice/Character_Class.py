@@ -57,7 +57,7 @@ class Lin:
         self.dir = 0
     def draw(self):
         self.image.clip_draw(0 , self.frame4 *65, 50, 60, self.x, self.y)
-    def update(self,frame_time):
+    def update(self):
         self.mc += 1
 
         if(self.y > 305):

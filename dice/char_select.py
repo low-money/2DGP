@@ -70,7 +70,7 @@ def handle_events():
                 game_framework.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
                 if count ==3:
-                    f = open('fiel.txt', 'w')
+                    f = open('select_char.txt', 'w')
                     select = {'character': dice.frame}
                     json.dump(select, f)
                     f.close()
