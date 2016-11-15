@@ -1,6 +1,1 @@
-{"name": "Monkey1","hp": 20 , "damage" : 5
-
-
-
-}
-
+{"monster": 2, "HP": 25}

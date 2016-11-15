@@ -1,6 +1,7 @@
 import game_framework
+import start_state
+import pico2d
 import char_select
-import batte_map
-from pico2d  import*
+import title_state
 
-game_framework.run(char_select)
+game_framework.run(start_state)

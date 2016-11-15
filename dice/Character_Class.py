@@ -9,16 +9,16 @@ class Fighter:
         self.mc =0
         self.x = 600
         self.y = 90
-        self.frame3 =2
+        self.frame =2
         self.image = load_image('fighter.png')
     def draw(self):
-        self.image.clip_draw(0 , self.frame3 *65, 50, 60, self.x, self.y)
+        self.image.clip_draw(0 , self.frame *65, 50, 60, self.x, self.y)
     def update(self):
         self.mc += 1
         if(self.y > 305):
-                self.frame3 = 1
+                self.frame = 1
         if(self.mc % 32 >= 24):
-            self.frame3 =2
+            self.frame =2
 
         if(0 < self.mc % 32 <= 8):
            self.x -= 52
@@ -50,20 +50,20 @@ class Lin:
         self.mc =0
         self.x = 600
         self.y = 90
-        self.frame4 =2
+        self.frame =2
         self.image = load_image('lin.png')
         self.life_time = 0.0
         self.total_frames = 0.0
         self.dir = 0
     def draw(self):
-        self.image.clip_draw(0 , self.frame4 *65, 50, 60, self.x, self.y)
+        self.image.clip_draw(0 , self.frame *65, 50, 60, self.x, self.y)
     def update(self):
         self.mc += 1
 
         if(self.y > 305):
-            self.frame4 = 1
+            self.frame = 1
         if(self.mc % 32 >= 24):
-            self.frame4 =2
+            self.frame =2
 
         if(0 < self.mc % 32 <= 8):
            self.x -= 52
@@ -105,17 +105,17 @@ class Smasu:
         self.mc =0
         self.x = 600
         self.y = 90
-        self.frame3 =2
+        self.frame =2
         self.image = load_image('smasu.png')
     def draw(self):
-        self.image.clip_draw(0 , self.frame3 *65, 50, 60, self.x, self.y)
+        self.image.clip_draw(0 , self.frame *65, 50, 60, self.x, self.y)
     def update(self):
         self.mc += 1
 
         if(self.y > 305):
-                self.frame3 = 1
+                self.frame = 1
         if(self.mc % 32 >= 24):
-            self.frame3 =2
+            self.frame =2
 
         if(0 < self.mc % 32 <= 8):
            self.x -= 52

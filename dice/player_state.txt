@@ -1,4 +1,4 @@
-{"Class": "Fighter","hp": 50
+{"Class": "Fighter","HP": 50
 
 
 

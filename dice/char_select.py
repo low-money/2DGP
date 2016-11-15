@@ -27,7 +27,7 @@ def destroy_world():
 
 def enter():
 
-    open_canvas(1200,680)
+    open_canvas(800,600)
     create_world()
 
 
@@ -74,7 +74,7 @@ def handle_events():
                     select = {'character': dice.frame}
                     json.dump(select, f)
                     f.close()
-                    game_framework.change_state(main_map)
+                    game_framework.push_state(main_map)
                 else:
                     count +=1
 

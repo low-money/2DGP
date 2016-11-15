@@ -4,21 +4,21 @@ class Select_char1:
     def __init__(self):
         self.image = load_image('select_char1.png')
     def draw(self):
-        self.image.draw(600,300)
+        self.image.draw(400,300)
 class Select_char2:
     def __init__(self):
         self.image = load_image('select_char2.png')
     def draw(self):
-        self.image.draw(600,300)
+        self.image.draw(400,300)
 class Select_char3:
     def __init__(self):
         self.image = load_image('select_char3.png')
     def draw(self):
-        self.image.draw(600,300)
+        self.image.draw(400,300)
 
 class Dice_a:
     def __init__(self):
-        self.x = 600
+        self.x = 400
         self.y = 400
         self.frame = 0
         self.image = load_image('dice.png')
