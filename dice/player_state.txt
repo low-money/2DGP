@@ -1,5 +1,6 @@
 {"Class": "Fighter","HP": 50
-
+"Class": "Wizard","HP": 50
+"Class": "asassin","HP": 50
 
 
 }
